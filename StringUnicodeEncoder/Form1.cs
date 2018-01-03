@@ -29,7 +29,7 @@ namespace StringUnicodeEncoder
                     // Little Endian
                     for (int i = 0; i < b.Length; i += 2)
                     {
-                        result += "\\u" + String.Format("{0:X}", b[i + 1]) + String.Format("{0:X}", b[i]);
+                        result += "\\u" + String.Format("{00:X}", b[i + 1]).PadLeft(2,'0') + String.Format("{00:X}", b[i]).PadLeft(2,'0');
                     }
                 }
                 catch(Exception ex)
